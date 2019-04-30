@@ -1,0 +1,14 @@
+// Functions, mixins, variables
+@import './global/config/*.css';
+
+// Шрифты
+@import './global/fonts.css';
+
+// Сброс стилей
+@import './global/reset.css';
+
+// Глобальные стили
+@import './global/global.css';
+
+// Страницы
+@import './pages/*.css';

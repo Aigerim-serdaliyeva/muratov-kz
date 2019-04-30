@@ -1,0 +1,16 @@
+body {
+    padding-bottom: 1000px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: 0.5s;      
+}
+
+p {
+    width: w(100);
+}
+
+.fade-enter, .fade-leave-to {       
+       
+}
+
