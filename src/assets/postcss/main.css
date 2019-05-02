@@ -1,3 +1,6 @@
+// Rules
+// Не забывать ставить точку с запятой!
+
 // Functions, mixins, variables
 @import './global/config/*.css';
 
@@ -10,5 +13,9 @@
 // Глобальные стили
 @import './global/global.css';
 
+// Компоненты
+@import './components/*.css';
+
 // Страницы
 @import './pages/*.css';
+

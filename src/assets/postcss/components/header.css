@@ -1,0 +1,70 @@
+.header {
+    color: #fff;
+    &__wrap {
+        h1 {
+            text-transform: uppercase; 
+            font-family: OpenSans-800;           
+        }
+        h2, button {
+            font-family: Roboto-400;
+        }
+    }
+}
+
+@media (--desktop-m) {
+    .header {
+        background: url('~@/assets/images/header-bg.jpg') no-repeat;
+        @include coverCenter;
+        &__wrap {
+            width: w(869);            
+            background: rgba(1, 33, 63, 0.8);
+            @include flex(center, flex-end);
+            article {                
+                padding: w(313) w(38) w(110) w(190);                
+            }
+            h1 {
+                font-size: w(115.887);
+            }
+            h2 {
+                text-align: center;
+                font-size: w(30.88);      
+                padding: w(54) 0 w(116);          
+            }
+            button {
+                display: block;
+                margin: auto;
+                font-size: w(24);
+                background: linear-gradient(243.47deg, rgba(255, 255, 255, 0) -8.21%, rgba(255, 255, 255, 0.22) 47.57%, rgba(255, 255, 255, 0) 119.13%), radial-gradient(25.50px at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(103, 219, 255, 0.2) 100%);
+                border: 1px solid rgba(255, 255, 255, 0.33);                
+                border-radius: 46px;     
+                color: #fff;           
+                padding: w(11) w(49);                   
+                &:last-child {
+                    margin-top: w(12);
+                }                
+            }
+        }
+    }
+}
+
+@media (--mobile-m) {
+    .header {
+        background: black;
+        &__wrap {
+            padding: wm(130.9) 0 wm(82);
+            text-align: center;
+        }
+        &__logo {
+            svg {
+                @include size(wm(142.33), wm(173.15));
+            }
+        }
+        h1 {
+            font-size: wm(64.0024);
+            padding: wm(161.77) 0 wm(8);
+        }
+        h2 {
+            font-size: wm(17);
+        }
+    }
+}

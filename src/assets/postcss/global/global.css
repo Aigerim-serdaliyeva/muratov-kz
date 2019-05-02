@@ -1,12 +1,29 @@
 html {
-    font-family: sans-serif;
-    font-size: 1vw;
+    font-family: sans-serif;        
 }
 
 * {
     box-sizing: border-box;
 }
 
-p {
-    font-size: w(100);    
+a {
+    text-decoration: none;
 }
+
+@media (--desktop-m) {
+    .mob {
+        display: none !important;
+    }
+    html {
+        font-size: 1vw;
+    }
+} 
+
+@media (--mobile-m) {
+    .desk {
+        display: none !important;
+    }
+    html {
+        font-size: 1vw;
+    }
+} 

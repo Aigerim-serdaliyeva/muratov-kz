@@ -1,3 +1,16 @@
-@mixin flex-all-center {
-    display: flex; justify-content: center; align-items: center;
+@mixin flex($jc:flex-start, $ai:flex-start, $fld:row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fld;
+}
+
+@mixin size($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin coverCenter() {
+    background-size: cover;
+    background-position: center center;
 }

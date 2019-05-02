@@ -6,7 +6,6 @@ module.exports = {
             stage: 0,
             autoprefixer: { grid: true }
         },
-        "postcss-advanced-variables": { unresolved: "ignore" },
         "postcss-functions": {
             functions: {
                 w: function(px, width = 1920) {
@@ -17,8 +16,9 @@ module.exports = {
                 },
             }
         },
+        "postcss-advanced-variables": { unresolved: "ignore" },        
         "postcss-nested": {},
-        cssnano: {
+        "cssnano": {
             preset: "default"
         }
     }

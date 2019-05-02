@@ -1,0 +1,45 @@
+@custom-media --desktop-m (min-width: 960px);
+@custom-media --mobile-m (max-width: 960px);
+
+.d-none {
+    display: none !important;
+}
+
+.pos-a-0 {
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.pos-f-0 {
+    position: fixed;
+    top: 0; left: 0;
+}
+
+.op-300 {
+    font-family: OpenSans-300;
+}
+
+.op-400 {
+    font-family: OpenSans-400;
+}
+
+.op-600 {
+    font-family: OpenSans-600;
+}
+
+.op-700 {
+    font-family: OpenSans-700;
+}
+
+.op-800 {
+    font-family: OpenSans-800;
+}
+
+.rob-400 {
+    font-family: Roboto-400;
+}
+

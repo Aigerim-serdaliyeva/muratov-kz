@@ -1,11 +1,23 @@
 <template lang="pug">
-    section.home
-        p test
-        
+    main.main#main
+        home-problems
+        home-minus
+        home-solution
+        home-commercial
+
 </template>
 
 <script>
-export default {};
+import HomeProblems from './home/HomeProblems';
+import HomeMinus from './home/HomeMinus';
+import HomeSolution from './home/HomeSolution';
+import HomeCommercial from './home/HomeCommercial';
+
+export default {
+    components: {
+        HomeProblems, HomeMinus, HomeSolution, HomeCommercial
+    }
+};
 </script>
 
 
