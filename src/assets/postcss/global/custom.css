@@ -10,8 +10,16 @@
     top: 0; left: 0;
 }
 
+.pos-r {
+    position: relative;
+}
+
 .w-100 {
     width: 100%;
+}
+
+.lh-n {
+    line-height: normal;
 }
 
 .pos-f-0 {
@@ -43,3 +51,15 @@
     font-family: Roboto-400;
 }
 
+.blue-bg {
+    background: $maincol;
+    @include coverCenter;
+    position: relative;        
+    &::before {
+        content: '';
+        position: absolute; top: 0; left: 0;
+        @include size(100%,100%);        
+        pointer-events: none;
+        background: url('~@/assets/images/blue-bg.png');        
+    }
+}

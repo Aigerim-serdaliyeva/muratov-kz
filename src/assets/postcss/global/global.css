@@ -27,3 +27,8 @@ a {
         font-size: 1vw;
     }
 } 
+
+.footer, .header, .home-minus, .home-solution, .home-problems, 
+.home-commercial, .about-descr {
+    position: relative;
+}

@@ -1,0 +1,103 @@
+.libra {
+    @include flex(center, center);
+    position: relative;      
+    &__lines {
+        display: flex; flex-wrap: wrap; align-items: center;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; margin: auto;                
+        span {
+            width: 50%;
+            display: block;
+            &:nth-child(odd) {
+                background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+            }
+            &:nth-child(even) {
+                background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }        
+    }
+    svg {
+        z-index: 2;
+        display: block;
+        position: relative;        
+    }
+}
+
+@media (--desktop-m) {
+    .libra {            
+        &__lines  {
+            @include size(30%, 100%);
+            span {
+                height: 1px;
+            }            
+        }   
+        svg {                                       
+            @include size(w(45.99), w(45.99));
+        }
+    }
+    .libra-end, .libra-start {
+        position: absolute; width: 100%;
+    }
+    // In end of block
+    .libra-end {
+        bottom: w(-22); left: 0; 
+    }
+    // In the top of block
+    .libra-start {
+        top: w(-22); left: 0;        
+    }
+    .libra-p-t-l {
+        padding-top: w(16.26);
+    }
+    .libra-p-b-l {
+        padding-bottom: w(16.26);
+    }
+}
+
+@media (--mobile-m) {
+    .libra {
+        &__lines {
+            @include size(10%, 100%);
+            opacity: 0.5;
+            span {
+                height: 1px;
+            }     
+        }
+        &__small {            
+            svg {
+                @include size(wm(15.65), wm(15.65));
+            } 
+        }
+        &__large {
+            .libra__lines {
+                height: 30%;
+                opacity: 1;
+            }
+            svg {
+                @include size(wm(32.52), wm(32.52));
+            }            
+        }
+    } 
+    .libra-end, .libra-start {
+        position: absolute; width: 100%;
+    }
+    // Standard padding  
+    .libra-s-p {
+        padding: wm(30) 0;
+    } 
+    // In end of block
+    .libra-end {
+        bottom: wm(-22);        
+    }
+    // In the top of block
+    .libra-start {
+        top: wm(-16);        
+    }
+    // Libra padding top large
+    .libra-p-t-l {
+        padding-top: wm(16.26);
+    }
+    .libra-p-b-l {
+        padding-bottom: wm(16.26);
+    }
+}

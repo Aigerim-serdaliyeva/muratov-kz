@@ -2,7 +2,7 @@
   <div id="app">
     <global-header />    
     <router-view />    
-    <global-footer />
+    <!-- <global-footer /> -->
   </div>
 </template>
 

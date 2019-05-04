@@ -11,8 +11,8 @@ mixin desktop
         a.nav__logo 
             +logo('desktop')  
         ul.nav__list 
-            li(v-for="(item, index) in nav" :key="`nav${index}`")
-                a(:href="item.path") {{item.name}}                    
+            li(v-for="(item, index) in nav" :key="`nav${index}`")                
+                router-link(:to="item.path") {{item.name}}                    
 
 mixin mobile
     .nav__wrap(v-if="isMobile")
@@ -36,8 +36,8 @@ export default {
     data() {
         return {
             nav: [
-                { name: 'Главная', path: '' },
-                { name: 'О нас', path: '' },
+                { name: 'Главная', path: '/' },
+                { name: 'О нас', path: '/about' },
                 { name: 'Услуги', path: '' },
                 { name: 'Наши Клиенты', path: '' },
                 { name: 'Контакты', path: '' }
