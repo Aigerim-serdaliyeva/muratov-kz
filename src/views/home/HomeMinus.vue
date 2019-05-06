@@ -20,7 +20,7 @@ mixin both
             h2.op-800 !{info.minus}
             each item in info.list
                 p.op-600 !{item.text}
-        base-libra(:isMobile="true" :type="'small'" class="libra-s-p")                
+        base-libra(:isMobile="true" :type="'small'" class="libra-s-p mar-bot-0")                
     base-libra(:isMobile="false" :type="'large'" class="libra-end")                        
 
 section.home-minus.blue-bg#home-minus

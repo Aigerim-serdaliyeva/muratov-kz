@@ -1,24 +1,24 @@
-// Rules
-// Не забывать ставить точку с запятой!
+    // Rules
+    // Не забывать ставить точку с запятой!
 
-// Functions, mixins, variables
-@import './global/config/*.css';
+    // Functions, mixins, variables
+    @import './global/config/*.css';
 
-// Шрифты
-@import './global/fonts.css';
+    // Шрифты
+    @import './global/fonts.css';
 
-// Сброс стилей
-@import './global/reset.css';
+    // Сброс стилей
+    @import './global/reset.css';
 
-// Кастомные стили(готовые классы)
-@import './global/custom.css';
+    // Кастомные стили(готовые классы)
+    @import './global/custom.css';
 
-// Глобальные стили
-@import './global/global.css';
+    // Глобальные стили
+    @import './global/global.css';
 
-// Компоненты
-@import './components/*.css';
+    // Компоненты
+    @import './components/*.css';
 
-// Страницы
-@import './pages/*.css';
+    // Страницы
+    @import './pages/*.css';
 

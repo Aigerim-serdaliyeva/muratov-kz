@@ -25,8 +25,7 @@ mixin mobile
     .mob
         global-nav(:isMobile="true" class="pos-a-0 w-100")
         .header__wrap
-            .header__logo
-                +logoMobile
+            .header__logo              
             h1= info.title
             h2= info.subtitle          
 

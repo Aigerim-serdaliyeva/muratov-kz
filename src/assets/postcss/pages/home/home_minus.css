@@ -39,7 +39,7 @@
     .home-minus {
         text-align: center;
         &__wrap {
-            padding: wm(30) wm(15) 0;
+            padding: wm(30) wm(15);
         }
         &__title {
             font-size: wm(18);

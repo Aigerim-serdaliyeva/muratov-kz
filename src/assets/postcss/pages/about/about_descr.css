@@ -6,7 +6,15 @@
         position: relative;        
     }
     &__main {
-        color: $maincol;        
+        color: $maincol;
+        h3 {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute; left: 0; right: 0; margin: auto;  
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), #41B7C4 49.73%, rgba(255, 255, 255, 0) 100%);              
+            }
+        }             
     }
     &__image {
         background: $maincol;
@@ -32,8 +40,13 @@
             }
             h3 {
                 font-size: w(36);
+                &::before {
+                    bottom: w(-13);
+                    @include size(6px, w(200));                    
+                }
             }
             p {
+                padding-top: w(20);
                 font-size: w(24);
             }
         }
@@ -67,10 +80,14 @@
                 font-size: wm(24);
             }
             h3 {
-                font-size: wm(18);
-                padding-bottom: wm(11);
+                font-size: wm(18);                
+                &::before {
+                    bottom: wm(-6);
+                    @include size(1px, wm(100));                    
+                }
             }
             p {
+                padding-top: wm(11);
                 font-size: wm(14);
             }
         }
