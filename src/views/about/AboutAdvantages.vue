@@ -27,17 +27,15 @@ mixin svgList(index)
     else 
         <svg viewBox="0 0 76 62" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)" stroke="#fff" stroke-width="2" stroke-miterlimit="10"><path d="M28.428 7.245s-1.699-3.152 1.936-3.648c0 0 .762 1.988 3.77 2.315 1.75.19 2.739 2.166 1.833 3.678l-.031.061M30.364 3.597s0-.02-.01-.058c-.237-1.193.896-2.214 2.06-1.87.957.282 2.42.502 4.283.137a3.578 3.578 0 0 1 2.668.524c1.225.816 3.048 2.237 4.644 4.294" stroke-linecap="round"/><path d="M36.306 8.036l7.847-1.222a6.464 6.464 0 0 1 2.42.081l1.401.318c1.689.383 2.492 2.37 1.483 3.78a.203.203 0 0 1-.041.058s2.121.894 1.39 3.744c0 0 1.854 1.193.731 3.478 0 0 1.916 1.093 1.329 3.28a60.96 60.96 0 0 1-10.824 6.7l-1.658.799-6.477.627c-1.75.17-3.46.629-5.056 1.359l-10.422 6.781" stroke-linecap="round"/><path d="M26.266 14.622s-1.565.454-1.431 1.887c.082.794.69 1.435 1.462 1.65l2.338.65c1.05.292 2.203-.309 2.43-1.375.093-.435.03-.934-.32-1.466M26.08 18.082l-7.65 5.658M40.384 29.052s11.153 6.25 17.177 8.9M52.866 21.554l4.037 2.102M49.416 11.05l-5.067.465M50.806 14.795l-5.468 1.37M51.538 18.273l-4.655 2.485" stroke-linecap="round"/><path d="M14.011 24.242l4.418-2.291v18.022l-4.418 2.376" stroke-linejoin="round"/><path d="M14.01 21.554V47.33L5 52.265V26.413l9.01-4.859z" stroke-linecap="round"/><path d="M61.99 24.242l-4.429-2.291v18.022l4.428 2.376" stroke-linejoin="round"/><path d="M61.99 21.554V47.33L71 52.265V26.413l-9.01-4.859z" stroke-linecap="round"/><path d="M32.084 12.712l2.06.586a2.07 2.07 0 0 0 2.543-1.393 2.07 2.07 0 0 0-1.318-2.55l-5.921-1.989c-.742-.25-1.586-.153-2.194.339-.381.31-.72.777-.824 1.48-.134.967.474 1.888 1.4 2.183l6.149 1.947-.423 1.28a2.181 2.181 0 0 1-2.81 1.373l-.351-.124-4.336-1.282c-.926-.353-1.359-1.741-.957-2.655.226-.526.762-.984 1.853-1.1"/></g><defs><filter id="filter0_d" x="0" y=".601" width="76" height="61.352" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/><feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/></filter></defs></svg>
 
-mixin arrow
-    .desk
-
 mixin both
     .about-advantages__wrap
         .about-advantages__arrow
             h2.op-800 
                 span= info.title.span
                 | !{info.title.main}
-            img(src="~@/assets/images/about-advantages-arrow.png")
-        .about-advantages__list
+            img.desk(src="~@/assets/images/about-advantages-arrow.png")
+            img.mob(src="~@/assets/images/mobile/about-advantages-arrow.png")
+        .about-advantages__list.lh-n
             each item, index in info.list                
                 article
                     +svgList(index)

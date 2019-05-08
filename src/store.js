@@ -5,8 +5,14 @@ Vue.use(Vuex);
 
 const store = () =>
   new Vuex.Store({
-    state: {},
-    mutations: {}
+    state: {
+        header_anim_state: ''
+    },
+    mutations: {
+        toggleHeaderHeight(state, stateClass) {
+            state.header_anim_state = stateClass
+        }
+    }
   });
 
 export default store;

@@ -8,15 +8,15 @@ mixin logo(type)
 
 mixin desktop
     .nav__wrap(v-if="!isMobile")
-        a.nav__logo 
+        router-link.nav__logo(to="/", @click.native="toggleHeaderHeight('')") 
             +logo('desktop')  
         ul.nav__list 
             li(v-for="(item, index) in nav" :key="`nav${index}`")                
-                router-link(:to="item.path") {{item.name}}                    
+                router-link(:to="item.path" @click.native="toggleHeaderHeight(item.anim)") {{item.name}}                    
 
 mixin mobile
     .nav__wrap(v-if="isMobile")
-        .nav__hamburger
+        .nav__hamburger(@click="toggleMobileMenu()")
             span
             span
             span
@@ -32,23 +32,21 @@ nav.nav.rob-400#nav
 </template>
 
 <script>
+import navMixin from '@/mixins/navMixin'
+
 export default {
-    data() {
-        return {
-            nav: [
-                { name: 'Главная', path: '/' },
-                { name: 'О нас', path: '/about' },
-                { name: 'Услуги', path: '' },
-                { name: 'Наши Клиенты', path: '' },
-                { name: 'Контакты', path: '' }
-            ]
-        }
-    },
+    mixins: [navMixin],
     props: {
         isMobile: {
             type: Boolean,
             required: true
         }
-    }
+    },
+    methods: {
+        toggleMobileMenu() {
+            this.$emit('toggle-mobile-menu');
+        }
+    }    
+
 }
 </script>

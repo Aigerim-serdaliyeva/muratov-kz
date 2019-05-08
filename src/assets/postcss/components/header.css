@@ -1,6 +1,9 @@
 .header {
-    color: #fff;
+    color: #fff;  
+    transition: 0.3s ease-in-out;  
+    overflow-y: hidden;
     &__wrap {
+        z-index: 1;        
         h1 {
             text-transform: uppercase; 
             font-family: OpenSans-800;           
@@ -14,9 +17,10 @@
 @media (--desktop-m) {
     .header {
         background: url('~@/assets/images/header-bg.jpg') no-repeat;
-        @include coverCenter;
+        @include coverCenter; 
+        height: w(969);          
         &__wrap {
-            width: w(869);            
+            width: w(869);             
             background: rgba(1, 33, 63, 0.8);
             @include flex(center, flex-end);
             article {                
@@ -45,6 +49,10 @@
             }
         }
     }
+
+    .header-anim {
+        height: w(581) !important;                
+    }
 }
 
 @media (--mobile-m) {
@@ -65,6 +73,56 @@
         }
         h2 {
             font-size: wm(17);
+        }
+        &__menu {   
+            background: #fff;     
+            position: fixed; top: 0; left: 0;
+            @include size(100%, 100%);
+            z-index: 100;    
+            transition: 0.3s ease-in-out;
+        }
+        &__menu-close {
+            position: absolute; top: 0; left: 0;
+            padding: wm(17) 0 0 wm(17); 
+            svg {
+                @include size(wm(20), wm(20))
+            }
+        }
+        &__menu-logo {
+            background: url('~@/assets/images/mobile/header-menu-header.jpg');
+            @include coverCenter;
+            @include flex(center,center);
+            @include size(wm(200), 100%);
+            svg {
+                display: block;                
+                @include size(wm(111), wm(135.03));
+            }
+        }
+        &__menu-list {
+            text-align: center;
+            a {
+                color: $maincol;
+                font-size: wm(18);
+                display: block;                
+                &:hover {
+                    color: #3CA6CD;
+                }                
+            }
+            li {          
+                position: relative;      
+                margin-top: wm(40);                
+            }
+        }
+        &__menu-social {
+            font-size: wm(60);
+            display: block;
+            padding: wm(40) 0;
+        }
+        &__menu-license {
+            text-align: center;
+            color: #AFAFAF;
+            opacity: 0.3;
+            font-size: wm(12);
         }
     }
 }

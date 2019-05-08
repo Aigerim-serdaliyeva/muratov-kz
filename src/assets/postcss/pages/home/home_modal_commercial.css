@@ -1,0 +1,60 @@
+$seccol: #3CA6CD;
+.home-mod-com {
+    color: $seccol;  
+    @include flex(center,center);
+    position: fixed; top: 0; left: 0; 
+    @include size(100%, 100%);
+    z-index: 150;
+    &__wrap {        
+        z-index: 150;
+        background: #fff;
+        position: relative;
+    }
+    button {
+        outline:none;
+        border: none;
+        background: $seccol;
+        color: #fff;
+        display: block; margin: auto;
+    }
+    input {        
+        text-align: center;
+        display: block;
+        margin: auto;
+        border: none;
+        border-bottom: 1px solid $seccol;
+        font-family: OpenSans-300;
+        &:focus {
+            outline: none;
+        }        
+    }    
+}
+
+@media (--desktop-m) {
+    .home-mod-com {
+        &__wrap {            
+            padding: w(70) w(229);
+        }
+        h2, button {
+            font-size: w(24);
+        }
+        input {
+            font-size: w(18);
+            width: w(332);
+            &:not(:last-of-type) {
+                margin-bottom: w(20);
+            }
+        }
+        button {
+            padding: w(8) w(44);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+        }        
+    }    
+}
+
+@media (--mobile-m) {
+    .home-mod-com {
+
+    }
+}

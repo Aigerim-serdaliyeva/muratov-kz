@@ -35,6 +35,18 @@
     }
 }
 
+// Libra color gay
+.libra-col-gay {
+    span {
+        &:nth-child(odd) {
+            background: linear-gradient(to left, #3CA6CD 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        &:nth-child(even) {
+            background: linear-gradient(to right, #3CA6CD 0%, rgba(255, 255, 255, 0) 100%);
+        }        
+    }
+}
+
 .libra-end, .libra-start {
     position: absolute; width: 100%;
 }

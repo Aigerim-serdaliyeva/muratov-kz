@@ -15,7 +15,17 @@ const router = new Router({
         path: "/about",
         name: "about",
         component: () => import("./views/About.vue")
-    }
+    },
+    {
+        path: "/clients",
+        name: "clients",
+        component: () => import("./views/Clients.vue")
+    },
+    {
+        path: "/contacts",
+        name: "contacts",
+        component: () => import("./views/Contacts.vue")
+    }        
   ]
 });
 
