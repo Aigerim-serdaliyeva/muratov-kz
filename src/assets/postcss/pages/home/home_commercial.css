@@ -20,6 +20,9 @@
             position: absolute; left: 0; margin: auto;      
         }
     }     
+    a {
+        cursor: pointer;
+    }
 }
 
 @media (--desktop-m) {

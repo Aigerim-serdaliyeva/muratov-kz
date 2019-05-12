@@ -12,6 +12,7 @@
 mixin desktop
     .desk
         global-nav(:isMobile="false" class="pos-a-0 w-100")   
+        global-nav(:isMobile="false" :class="['w-100 nav-shadow pos-f-0', { 'hidden': sticked_nav_state }]")
         .header__wrap
             article.w-100
                 h1= info.title
@@ -29,28 +30,29 @@ mixin mobileMenu
     mixin mobileMenuLines(className)
         .header__lines.pseudo-lines(class=className)
             span(v-for="item in 3")
-
-    .header__menu(:class="{ 'header__menu-hidden': mobile_menu_state }")
-        .header__menu-close(@click="toggleMobileMenu")
-            +close
-        .header__menu-logo
-            +logoMobile         
-        +mobileMenuLines('pos-a-l')
-        +mobileMenuLines('pos-a-r')               
-        .header__menu-list.op-600
-            ul
-                li(v-for="(item, index) in nav" :key="`nav-mob${index}`")                                
-                    router-link(:to="item.path" @click.native="toggleHeaderHeight(item.anim)") {{item.name}}                                                   
-        .header__menu-social
-            font-awesome-icon(:icon="['fab', 'instagram']")            
-            font-awesome-icon(:icon="['fab', 'facebook-square']")
-            font-awesome-icon(:icon="['fab', 'vk']")  
-        .header__menu-license.op-400= info.license                                                                                         
+    transition(name="hidden-nav")
+        .header__menu(v-if="!mobile_menu_state" )
+            .header__menu-close(@click="toggleMobileMenu")
+                +close
+            .header__menu-logo
+                +logoMobile         
+            +mobileMenuLines('pos-a-l')
+            +mobileMenuLines('pos-a-r')               
+            .header__menu-list.op-600
+                ul
+                    li(v-for="(item, index) in nav" :key="`nav-mob${index}`")                                
+                        router-link(:to="item.path" @click.native="toggleHeaderHeight(item.anim)") {{item.name}}                                                   
+            .header__menu-social
+                font-awesome-icon(:icon="['fab', 'instagram']")            
+                font-awesome-icon(:icon="['fab', 'facebook-square']")
+                font-awesome-icon(:icon="['fab', 'vk']")  
+            .header__menu-license.op-400= info.license                                                                                         
                                
 mixin mobile        
     .mob      
         +mobileMenu  
         global-nav(:isMobile="true" @toggle-mobile-menu="toggleMobileMenu()" class="pos-a-0 w-100")
+        global-nav(:isMobile="true" @toggle-mobile-menu="toggleMobileMenu()" :class="['pos-f-0 w-100', { 'hidden': sticked_nav_state }]")
         .header__wrap
             .header__logo      
                 +logoMobile        
@@ -61,6 +63,7 @@ mixin mobile
 header.header#header(:class="header_anim_state")
     +desktop
     +mobile
+    .header__trigger
 
 </template>
 
@@ -73,7 +76,8 @@ export default {
     mixins: [navMixin],    
     data() {
         return {
-            mobile_menu_state: true
+            mobile_menu_state: true,
+            sticked_nav_state: true
         }
     },
     components: {
@@ -88,6 +92,22 @@ export default {
         toggleMobileMenu() {
             this.mobile_menu_state = !this.mobile_menu_state;              
         },
+        stickedNav() {
+            let self = this;
+            const scene = new this.$scrollmagic.Scene({
+            triggerElement: '.header__trigger',         
+            })
+            .on('progress', (e) => {
+                self.sticked_nav_state = !self.sticked_nav_state
+            })
+            this.$ksvuescr.$emit('addScene', 'stickedNav', scene)               
+            },              
+        },
+    mounted() {
+        this.$nextTick(this.stickedNav)      
+    },
+    destroyed () {    
+        this.$ksvuescr.$emit('destroy')
     }
 }
 </script>

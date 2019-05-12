@@ -15,10 +15,14 @@ import HomeSolution from './home/HomeSolution';
 import HomeCommercial from './home/HomeCommercial';
 import HomeModalCommercial from './home/HomeModalCommercial';
 
+
 export default {
     components: {
         HomeProblems, HomeMinus, HomeSolution, HomeCommercial,
         HomeModalCommercial
+    },
+    mounted() {
+        
     }
 };
 </script>

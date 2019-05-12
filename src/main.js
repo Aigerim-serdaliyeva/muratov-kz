@@ -12,7 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // *** Plugins
 import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
-
+import KsVueScrollmagic from 'ks-vue-scrollmagic'
+Vue.use(KsVueScrollmagic)
 // *** Mixins
 
 // Fontawesome

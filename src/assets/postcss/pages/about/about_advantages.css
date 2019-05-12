@@ -5,6 +5,9 @@
         background: $maincolRgba;
         span {display: block;}
     }
+    &__wrap {
+        position: relative;
+    }
     svg {
         display: block;
     }
@@ -72,6 +75,7 @@
         &__arrow {  
             padding: wm(41) 0 wm(41) wm(20);          
             background: $maincol;
+            z-index: 1;
             position: relative;            
             box-shadow: 3.27812px 1.00865px 5.79975px rgba(0, 0, 0, 0.3);            
             font-size: wm(28.6301);              
@@ -91,8 +95,17 @@
             text-align: center;           
             padding: wm(37) wm(10);            
             font-size: wm(14);   
-            background: #000;         
-            article {                                             
+            background: rgba(0, 48, 91, 0.5);   
+            position: relative;  
+            &::before {
+                content:''; 
+                z-index: -1;
+                position: absolute; top: 0; left: 0;
+                @include size(100%,100%);
+                background: url('~@/assets/images/mobile/about-advantages-bg.jpg');
+            }    
+            article {
+                position: relative;                                             
                 svg {
                     display: block; margin:wm(21) auto;
                 }            

@@ -7,7 +7,7 @@ mixin logo(type)
         img(src="~@/assets/images/mobile/logo.png", alt="")
 
 mixin desktop
-    .nav__wrap(v-if="!isMobile")
+    .nav__wrap(v-if="!isMobileMix")
         router-link.nav__logo(to="/", @click.native="toggleHeaderHeight('')") 
             +logo('desktop')  
         ul.nav__list 
@@ -15,7 +15,7 @@ mixin desktop
                 router-link(:to="item.path" @click.native="toggleHeaderHeight(item.anim)") {{item.name}}                    
 
 mixin mobile
-    .nav__wrap(v-if="isMobile")
+    .nav__wrap(v-if="isMobileMix")
         .nav__hamburger(@click="toggleMobileMenu()")
             span
             span
@@ -45,8 +45,17 @@ export default {
     methods: {
         toggleMobileMenu() {
             this.$emit('toggle-mobile-menu');
-        }
+        }     
+    },
+    computed: {
+               isMobileMix() {
+            if (window.matchMedia("(max-width:960px)").matches) {
+                return true;
+              } else {
+                return false;
+              }        
     }    
+    }
 
 }
 </script>

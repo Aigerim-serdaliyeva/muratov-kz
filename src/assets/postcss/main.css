@@ -10,6 +10,8 @@
     // Сброс стилей
     @import './global/reset.css';
 
+    @import './../../../node_modules/animate.css/animate.min.css';
+
     // Кастомные стили(готовые классы)
     @import './global/custom.css';
 

@@ -20,9 +20,22 @@ mixin both
         ul
             each item in info.list
                 li= item.text
-        a.home-commercial__button=info.button        
+        a.home-commercial__button(@click="toggleHomeCommercialModal")=info.button            
 
 section.home-commercial.blue-bg#home-commercial
     +both
 
 </template>
+
+<script>
+import { mapMutations } from 'vuex';
+
+export default {
+    methods: {
+        ...mapMutations([
+            'toggleHomeCommercialModal', 
+        ]),
+    }
+}
+</script>
+

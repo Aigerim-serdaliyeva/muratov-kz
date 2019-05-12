@@ -13,28 +13,22 @@ try {
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'info@newestate.kz';                     // SMTP username
-    $mail->Password   = 'New24Estate01$';                               // SMTP password
+    $mail->Username   = 'info@ladyssecrets.kz';                     // SMTP username
+    $mail->Password   = 'Ko87Zh85!';                               // SMTP password
     $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 465;      
     $mail->CharSet 	= 'utf-8';                              // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('info@newestate.kz', 'Newestate');
-    $mail->addAddress('sanch941@gmail.com', 'Main');         
-    $mail->addCC("info@newestate.kz");
-    $mail->addCC("callcentre@muratov.kz");
-    $mail->addCC("z.bertoleuova@newestate.kz");
-    $mail->addCC("a.zhadraeva@newestate.kz");
-    $mail->addCC("a.bektas@newestate.kz");
-    $_POST = json_decode(file_get_contents('php://input'), true);
-    $input_name = $_POST["name"];
-    $input_phone = $_POST["phone"];
+    $mail->setFrom('info@ladyssecrets.kz', 'Newestate');
+    $mail->addAddress('sanch941@gmail.com', 'Main');           
+    $_POST = json_decode(file_get_contents('php://input'), true);   
+    $input_name = $_POST["companyName"];
 
     // Content
     $mail->isHTML(true);        
     $mail->Subject = "Заказали звонок";                          // Set email format to HTML    
-    $mail->Body	= "<p>Имя клиента - $input_name</p> <p>Телефон клиента - $input_phone</p>   ";
+    $mail->Body	= "<p>Имя клиента - $input_name</p>   ";
 
     $mail->send();
     echo 'Message has been sent';

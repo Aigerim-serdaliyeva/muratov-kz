@@ -20,8 +20,8 @@
             ],
             mob: [
                 { text: 'г.Алматы, ул. Шевченко, 153/1' },
-                { text: 'Call-center: 5335, +7 (701) 031-67-13, +7 (727) 339-04-52 ' },
-                { text: 'ПЦН: +7 (727) 346-83-18, +7 (701) 038-68-20' },
+                { text: '<a href="tel:5335">Call-center: 5335, </a><a href="tel:+77010316713"> +7 (701) 031-67-13, </a> <a href="tel:+77273390452">+7 (727) 339-04-52 </a>' },
+                { text: '<a href="tel:+77273468318">ПЦН: +7 (727) 346-83-18, </a><a href="tel:+77010386820"> +7 (701) 038-68-20 </a>' },
                 { text: 'Email: info.muratov.kz' }
             ]
         }                                 
@@ -31,20 +31,22 @@
 
 mixin article(data, type, additionalClass)  
     //- Итерация по массиву
-    mixin iteration
-        each subitem in data                
+    mixin iteration(type)
+        each subitem in data
+            if type === 'default'                
                 a(href=subitem.path) !{subitem.text}
-
+            else 
+                div !{subitem.text}
     if type === 'nav'
         article.footer__nav
-            +iteration            
+            +iteration ('default')           
     else
         article.footer__contacts(class=additionalClass) 
-            .footer__icons
+            .footer__icons                
                 font-awesome-icon(:icon="['fab', 'instagram']")            
                 font-awesome-icon(:icon="['fab', 'facebook-square']")
                 font-awesome-icon(:icon="['fab', 'vk']")
-            +iteration
+            +iteration('contacts')
 
 //- Происходит усложнение из за маркетологов которые нонстоп меняют дизайн , расположение и количество номеров            
 mixin both
@@ -54,7 +56,7 @@ mixin both
         +article(info.list1, 'nav')                 
         +article(info.list2, 'nav')                
         +article(info.contacts.desk, 'contacts', 'desk')            
-        +article(info.contacts.desk, 'contacts', 'mob w-100')                    
+        +article(info.contacts.mob, 'contacts', 'mob w-100')                    
         .footer__license.op-400.w-100=license
 
 footer.footer.w-100#footer

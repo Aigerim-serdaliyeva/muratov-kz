@@ -1,9 +1,10 @@
 .header {
     color: #fff;  
-    transition: 0.3s ease-in-out;  
+    transition: 0.3s;  
     overflow-y: hidden;
     &__wrap {
-        z-index: 1;        
+        z-index: 1;  
+        position: relative;      
         h1 {
             text-transform: uppercase; 
             font-family: OpenSans-800;           
@@ -57,7 +58,14 @@
 
 @media (--mobile-m) {
     .header {
-        background: black;
+        background: linear-gradient(180deg, rgba(1, 33, 63, 0) 33.87%, rgba(1, 33, 63, 0.8) 88.88%);
+        &::before {
+            content: '';
+            position: absolute; top: 0; left: 0;
+            @include size(100%,100%);
+            z-index: -1;
+            background: url('~@/assets/images/mobile/header-bg.jpg') no-repeat;                    
+        }
         &__wrap {
             padding: wm(130.9) 0 wm(82);
             text-align: center;
@@ -78,8 +86,8 @@
             background: #fff;     
             position: fixed; top: 0; left: 0;
             @include size(100%, 100%);
-            z-index: 100;    
-            transition: 0.3s ease-in-out;
+            z-index: 110;    
+            transition: 0.3s;
         }
         &__menu-close {
             position: absolute; top: 0; left: 0;

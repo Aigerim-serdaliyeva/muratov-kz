@@ -45,6 +45,20 @@
             background: linear-gradient(to right, #3CA6CD 0%, rgba(255, 255, 255, 0) 100%);
         }        
     }
+    svg {
+        path {
+            &:first-child {
+                stroke: #3CA6CD !important;
+                fill: #3CA6CD !important;
+            }
+            &:nth-child(2){
+                stroke: #3CA6CD !important;                
+            }
+            &:last-child {
+                fill: #3CA6CD;
+            }
+        }
+    }
 }
 
 .libra-end, .libra-start {

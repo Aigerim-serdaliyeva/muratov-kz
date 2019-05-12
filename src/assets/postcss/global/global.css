@@ -46,3 +46,12 @@ a {
 *:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
 *:focus::placeholder { opacity: 0; } /* Modern Browsers */
 // *** /hover input
+
+.hidden-nav-enter-active, .hidden-nav-leave-active {
+  transition: opacity .5s;
+}
+.hidden-nav-enter, .hidden-nav-leave-to {
+  opacity: 0;
+}
+
+ .wow { visibility: hidden; }

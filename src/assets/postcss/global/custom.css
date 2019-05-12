@@ -71,14 +71,14 @@
 
 .blue-bg {
     background: $maincol;
-    @include coverCenter;
+    
     position: relative;        
     &::before {
         content: '';
         position: absolute; top: 0; left: 0;
         @include size(100%,100%);        
         pointer-events: none;
-        background: url('~@/assets/images/blue-bg.png');        
+        background: url('~@/assets/images/blue-bg.png');                
     }
 }
 
@@ -136,3 +136,11 @@
 .header__menu-hidden {
     transform: translateY(-100%);
 }
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events:none;
+    z-index: -1;
+}
+
