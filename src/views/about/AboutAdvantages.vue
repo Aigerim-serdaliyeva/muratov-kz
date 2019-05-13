@@ -37,7 +37,7 @@ mixin both
             img.mob(src="~@/assets/images/mobile/about-advantages-arrow.png")
         .about-advantages__list.lh-n
             each item, index in info.list                
-                article
+                article(class="wow fadeInRight" data-wow-delay=index*0.1 + 's')
                     +svgList(index)
                     .article
                         h3.op-800= item.title

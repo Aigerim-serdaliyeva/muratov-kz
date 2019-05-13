@@ -10,6 +10,10 @@ a {
     text-decoration: none;
 }
 
+#app {
+    overflow-x: hidden;
+}
+
 @media (--desktop-m) {
     .mob {
         display: none !important;             
@@ -54,4 +58,3 @@ a {
   opacity: 0;
 }
 
- .wow { visibility: hidden; }

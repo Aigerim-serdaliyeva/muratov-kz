@@ -1,8 +1,7 @@
 <template lang="pug">
 
 -
-    var info = {
-        title: 'Получить коммерческое предложение',
+    var info = {        
         p1: 'Наименование компании',
         p2: 'Имя',
         p3: 'Фамилия',
@@ -18,17 +17,17 @@ mixin closeSvg
      
 mixin both
     form.home-mod-com__wrap(@submit="sendMail($event)")
-        .home-mod-com__close(@click="toggleHomeCommercialModal")
+        .home-mod-com__close(@click="toggleHomeCommercialModal('close')")
             +closeSvg
-        h2.op-600= info.title
+        h2.op-600 {{home_commercial_modal_title}}
         input(type="text" v-model="sendData.companyName" placeholder=info.p1 required)
         input(type="text" v-model="sendData.clientName" placeholder=info.p2 required)
         input(type="text" v-model="sendData.clientSurname" placeholder=info.p3 required)
         input(type="text" v-model="sendData.clientPatronymic" placeholder=info.p4 required)
-        input(type="tel" v-model="sendData.clientPhone" placeholder=info.p5 required)
+        input(type="tel" v-mask="'8(###) ###-##-##'" v-model="sendData.clientPhone" placeholder=info.p5 required)
         input(type="email" v-model="sendData.clientEmail" placeholder=info.p6 required)
-        base-libra(:isMobile="false" :type="'small'" :transparent="true" class="libra-col-gay")
-        base-libra(:isMobile="true" :type="'small'" :transparent="true" class="libra-col-gay")
+        base-libra(:isMobile="false" :type="'small'" :transparent="true" class="libra-col-gay anim-0")
+        base-libra(:isMobile="true" :type="'small'" :transparent="true" class="libra-col-gay anim-0")
         button.op-600(type="submit") {{buttonState}}
 
 section.home-mod-com(:class="{ 'hidden': home_commercial_modal_state }")
@@ -37,55 +36,56 @@ section.home-mod-com(:class="{ 'hidden': home_commercial_modal_state }")
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import { mapMutations } from 'vuex';
-import axios from 'axios';
+import { mapState } from "vuex";
+import { mapMutations } from "vuex";
+import axios from "axios";
+import { VueMaskDirective } from "v-mask";
 
 export default {
-    data() {
-        return {
-            publicPath: process.env.BASE_URL,
-            sendData: {
-                companyName: '',
-                clientName: '',
-                clientSurname: '',
-                clientPatronymic: '',
-                clientPhone: null,
-                clientEmail: ''
-            },
-            buttonState: 'Получить'
-        }
-    },
-    computed: {
-        ...mapState([  
-            'home_commercial_modal_state'
-        ])
-    },
-    methods: {
-        ...mapMutations([
-            'toggleHomeCommercialModal', 
-        ]),
-        sendMail(e) {
-            e.preventDefault();
-            e.stopPropagation(); 
-            this.buttonState = 'Отправка сообщения...'
-            const options = {
-                method: "POST",
-                headers: {
-                    "content-type": "multipart/form-data"
-                },
-                data: this.sendData,
-                url: `${this.publicPath}mailer.php`
-            }      
-            axios(options)
-            .then(res => {
-                this.buttonState = 'Ваше сообщение отправлено, окно закроется через 5 секунд'
-            })  
-            .catch(err => {
-                console.log(err)
-            })   
-        }
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+      sendData: {
+        companyName: "",
+        clientName: "",
+        clientSurname: "",
+        clientPatronymic: "",
+        clientPhone: null,
+        clientEmail: ""
+      },
+      buttonState: "Получить"
+    };
+  },
+  computed: {
+    ...mapState(["home_commercial_modal_state", "home_commercial_modal_title"])
+  },
+  methods: {
+    ...mapMutations(["toggleHomeCommercialModal"]),
+    sendMail(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      let target = e.currentTarget;
+      this.buttonState = "Отправка сообщения...";
+      const options = {
+        method: "POST",
+        headers: {
+          "content-type": "multipart/form-data"
+        },
+        data: this.sendData,
+        url: `${this.publicPath}mailer.php`
+      };
+      axios(options)
+        .then(() => {
+          this.buttonState = "Сообщение успешно отправлено";
+          target.querySelector("button").disabled = true;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
-}
+  },
+  directives: {
+    mask: VueMaskDirective
+  }
+};
 </script>
-

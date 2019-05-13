@@ -28,14 +28,11 @@ section.home-commercial.blue-bg#home-commercial
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations } from "vuex";
 
 export default {
-    methods: {
-        ...mapMutations([
-            'toggleHomeCommercialModal', 
-        ]),
-    }
-}
+  methods: {
+    ...mapMutations(["toggleHomeCommercialModal"])
+  }
+};
 </script>
-

@@ -1,7 +1,6 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/test" : "/",  
+  publicPath: process.env.NODE_ENV === "production" ? "/" : "/"
 };
-
 
 // const imagemin = require('imagemin');
 // const imageminJpegtran = require('imagemin-jpegtran');
@@ -23,5 +22,5 @@ module.exports = {
 // 		]
 // 	});
 
-// 	console.log(files);	
+// 	console.log(files);
 // })();

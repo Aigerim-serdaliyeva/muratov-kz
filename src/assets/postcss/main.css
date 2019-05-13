@@ -18,6 +18,9 @@
     // Глобальные стили
     @import './global/global.css';
 
+    // Анимации
+    @import './global/animations.css';
+
     // Компоненты
     @import './components/*.css';
 

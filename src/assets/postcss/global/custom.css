@@ -82,6 +82,11 @@
     }
 }
 
+.anim-0 {
+    animation: none !important;
+    visibility: visible !important;
+}
+
 .h2-regular {
     background: $maincol;
     color: #fff;

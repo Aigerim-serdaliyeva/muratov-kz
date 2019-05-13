@@ -15,8 +15,8 @@ mixin both
         h2.op-800= info.title
         base-libra(:isMobile="false" :type="'small'" :transparent="true" class="libra-s-p libra-col-blue")
         base-libra(:isMobile="true" :type="'small'" :transparent="true" class="libra-s-p libra-col-blue")
-        each item in info.list
-            article
+        each item,index in info.list
+            article(class="wow zoomIn" data-wow-delay=index*0.1 + 's')
                 h3.op-800= item.title
                 p.op-400= item.subtitle
         base-libra(:isMobile="false" :type="'small'" :transparent="true" class="libra-s-p libra-col-blue mar-bot-0")

@@ -13,8 +13,8 @@
             ],
             mob: [
                 { text: 'info@muratov.kz'},                        
-                { text: '<a>Call-center: 5335, </a><a> +7 (701) 031-67-13, </a> <a> +7 (727) 339-04-52 </a> ' },
-                { text: 'ПЦН:<a> +7 (727) 346-83-18, </a> <a> +7 (701) 038-68-20 </a>' },
+                { text: '<a href="tel:5335">Call-center: 5335, </a><a href="tel:+77010316713"> +7 (701) 031-67-13, </a> <a href="tel:+77273390452"> +7 (727) 339-04-52 </a> ' },
+                { text: 'ПЦН:<a href="tel:+77273468318"> +7 (727) 346-83-18, </a> <a href="tel:+77010386820"> +7 (701) 038-68-20 </a>' },
                 { text: 'г.Алматы, ул. Шевченко, 153/1' },
                 { text: '@muratovpartners.kz' }
             ]
@@ -61,3 +61,11 @@ mixin both
 section.contacts#contacts
     +both
 </template>
+
+<script>
+import toggleHeaderHeight from "@/mixins/toggleHeaderHeight";
+
+export default {
+  mixins: [toggleHeaderHeight]
+};
+</script>

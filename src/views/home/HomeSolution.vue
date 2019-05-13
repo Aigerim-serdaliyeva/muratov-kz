@@ -5,7 +5,7 @@
         subtitle1: 'Мы назначаем Клиенту Ведущего персонального юриста и предоставляем проектного юриста в офис заказчика для быстрой и эффективной коммуникации.',
         subtitle2: 'Наша услуга исключает эти риски благодаря уникальности модели взаимодействия:',
         direction: [
-            { title: 'Клиент', subtitle: '????' },
+            { title: 'Клиент', subtitle: 'Ставит задачу' },
             { title: 'Проектный юрист', subtitle: 'Прием и передача информации без искажения. Выполнение задачи технической и частично тактической квалификации' },
             { title: 'Юрист-куратор', subtitle: 'Выполнение задачи стратегической и частично тактической квалификации Курирование проектного юриста' }
         ]
@@ -34,14 +34,14 @@ mixin both
         .home-solution__direction.lh-n
             each item, index in info.direction
                 article
-                    .images.w-100
-                        +svg(index + 1)
-                    h2.op-700= item.title
-                    h3.op-400= item.subtitle
+                    .images.w-100(class="wow zoomIn" data-wow-delay=index*0.3 + 's')
+                        +svg(index + 1)                    
+                    h2(class="wow zoomIn" data-wow-delay=index*0.3 + 's').op-700= item.title
+                    h3(class="wow zoomIn" data-wow-delay=index*0.3 + 's').op-400= item.subtitle
                     if index !== 2
-                        .home-solution__arrow.desk 
+                        .home-solution__arrow.desk(class="wow zoomIn" data-wow-delay=index*0.5 + 's') 
                             +arrow('desktop')
-                        .home-solution__arrow.mob                                                        
+                        .home-solution__arrow.mob(class="wow zoomIn" data-wow-delay=index*0.5 + 's')                                                         
 
 
 section.home-solution#home-solution

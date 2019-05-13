@@ -32,30 +32,29 @@ nav.nav.rob-400#nav
 </template>
 
 <script>
-import navMixin from '@/mixins/navMixin'
+import navMixin from "@/mixins/navMixin";
 
 export default {
-    mixins: [navMixin],
-    props: {
-        isMobile: {
-            type: Boolean,
-            required: true
-        }
-    },
-    methods: {
-        toggleMobileMenu() {
-            this.$emit('toggle-mobile-menu');
-        }     
-    },
-    computed: {
-               isMobileMix() {
-            if (window.matchMedia("(max-width:960px)").matches) {
-                return true;
-              } else {
-                return false;
-              }        
-    }    
+  mixins: [navMixin],
+  props: {
+    isMobile: {
+      type: Boolean,
+      required: true
     }
-
-}
+  },
+  methods: {
+    toggleMobileMenu() {
+      this.$emit("toggle-mobile-menu");
+    }
+  },
+  computed: {
+    isMobileMix() {
+      if (window.matchMedia("(max-width:960px)").matches) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+};
 </script>

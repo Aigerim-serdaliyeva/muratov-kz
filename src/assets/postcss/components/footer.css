@@ -11,9 +11,12 @@
     color: #fff;    
     a {
         color: #fff;
-    }
+    }    
     article:not(:last-child) a {
         display: block;
+    }
+    &__icons a{
+        display: inline-block !important;
     }
     &__license {
         text-align: center;
@@ -52,7 +55,7 @@
             font-size: w(14);
         }
         &__icons {
-            svg:not(:first-child) { margin-left: w(15); }
+            a:not(:first-child) svg { margin-left: w(15); }
             font-size: w(24);
             margin-bottom: w(15);
         }
@@ -90,7 +93,7 @@
         }
         &__icons {
             text-align: center;
-            svg:not(:first-child) { margin-left: wm(50); }
+            a:not(:first-child) svg { margin-left: wm(50); }
             font-size: wm(24);
             margin-bottom: wm(15);
         }

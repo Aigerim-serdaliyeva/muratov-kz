@@ -7,13 +7,17 @@ section.about#about
 </template>
 
 <script>
-import AboutDescr from './about/AboutDescr';
-import AboutPrinciples from './about/AboutPrinciples';
-import AboutAdvantages from './about/AboutAdvantages';
+import AboutDescr from "./about/AboutDescr";
+import AboutPrinciples from "./about/AboutPrinciples";
+import AboutAdvantages from "./about/AboutAdvantages";
+import toggleHeaderHeight from "@/mixins/toggleHeaderHeight";
 
 export default {
-    components: {
-        AboutDescr, AboutPrinciples, AboutAdvantages
-    }
-}
+  components: {
+    AboutDescr,
+    AboutPrinciples,
+    AboutAdvantages
+  },
+  mixins: [toggleHeaderHeight]
+};
 </script>

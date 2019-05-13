@@ -3,26 +3,25 @@
 -   
     var info = {        
         list1: [
-            { text: 'Главная', path: '' },
-            { text: 'О нас', path: '' },            
-            { text: 'Услуги', path: '' }
+            { text: 'Главная', path: '/' },
+            { text: 'О нас', path: '/about' },                        
         ],
         list2: [
-            { text: 'Наши Клиенты', path: '' },
-            { text: 'Контакты', path: '' }            
+            { text: 'Наши Клиенты', path: '/clients' },
+            { text: 'Контакты', path: '/contacts' }            
         ],
         contacts: {
             desk: [
                 { text: 'г.Алматы, ул. Шевченко, 153/1' },
                 { text: 'Call-center: 5335, +7 (701) 031-67-13, +7 (727) 339-04-52 ' },
                 { text: 'ПЦН: +7 (727) 346-83-18, +7 (701) 038-68-20' },
-                { text: 'Email: info.muratov.kz' }
+                { text: 'Email: info@muratov.kz' }
             ],
             mob: [
                 { text: 'г.Алматы, ул. Шевченко, 153/1' },
                 { text: '<a href="tel:5335">Call-center: 5335, </a><a href="tel:+77010316713"> +7 (701) 031-67-13, </a> <a href="tel:+77273390452">+7 (727) 339-04-52 </a>' },
                 { text: '<a href="tel:+77273468318">ПЦН: +7 (727) 346-83-18, </a><a href="tel:+77010386820"> +7 (701) 038-68-20 </a>' },
-                { text: 'Email: info.muratov.kz' }
+                { text: 'Email: info@muratov.kz' }
             ]
         }                                 
     }
@@ -34,7 +33,7 @@ mixin article(data, type, additionalClass)
     mixin iteration(type)
         each subitem in data
             if type === 'default'                
-                a(href=subitem.path) !{subitem.text}
+                router-link(to=subitem.path) !{subitem.text}
             else 
                 div !{subitem.text}
     if type === 'nav'
@@ -43,9 +42,12 @@ mixin article(data, type, additionalClass)
     else
         article.footer__contacts(class=additionalClass) 
             .footer__icons                
-                font-awesome-icon(:icon="['fab', 'instagram']")            
-                font-awesome-icon(:icon="['fab', 'facebook-square']")
-                font-awesome-icon(:icon="['fab', 'vk']")
+                a(href="https://www.instagram.com/muratov_partners/" target="_blank")
+                    font-awesome-icon(:icon="['fab', 'instagram']")            
+                a(href="https://www.facebook.com/Muratovpartners/" target="_blank")
+                    font-awesome-icon(:icon="['fab', 'facebook-square']")
+                a(href="https://vk.com/muratovpartners" target="_blank")
+                    font-awesome-icon(:icon="['fab', 'vk']")
             +iteration('contacts')
 
 //- Происходит усложнение из за маркетологов которые нонстоп меняют дизайн , расположение и количество номеров            

@@ -69,10 +69,7 @@
 
 
 @media (--mobile-m) {
-    .home-problems {
-        &__wrap {
-            display: flex; flex-direction: column;
-        }
+    .home-problems {        
         &__question {
             padding: wm(40) 0;
             font-size: wm(36);
@@ -82,8 +79,7 @@
             }
         }
         &__list {
-            padding: wm(40) wm(16);
-            @include flex(flex-start, center, column);
+            padding: wm(40) wm(16);            
             article {
                 text-align: center;
             }
