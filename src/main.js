@@ -18,6 +18,8 @@ import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
 import KsVueScrollmagic from "ks-vue-scrollmagic";
 Vue.use(KsVueScrollmagic);
+import WOW from 'wow.js'
+new WOW().init();
 // *** Mixins
 
 // Fontawesome
