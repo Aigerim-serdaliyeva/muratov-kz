@@ -13,14 +13,14 @@ try {
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'no-reply@muratov.kz';                     // SMTP username
+    $mail->Username   = 'no-reply@newestate.kz';                     // SMTP username
     $mail->Password   = 'rtyfgh123!';                               // SMTP password
     $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 465;      
     $mail->CharSet 	= 'utf-8';                              // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('no-reply@muratov.kz', 'Muratov');    
+    $mail->setFrom('no-reply@newestate.kz', 'Muratov');    
     $mail->addAddress('callcentre@muratov.kz', 'Info');                 
     $mail->addCC("info@muratov.kz");                 
     $mail->addCC("sanch941@gmail.com");                                                 

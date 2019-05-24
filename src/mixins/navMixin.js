@@ -4,7 +4,7 @@ const nav = {
       nav: [
         { name: "Главная", path: "/", anim: "" },
         { name: "О нас", path: "/about", anim: "header-anim" },
-        { name: "Наши Клиенты", path: "/clients", anim: "header-anim" },
+        { name: "Клиенты и Партнеры", path: "/clients", anim: "header-anim" },
         { name: "Контакты", path: "/contacts", anim: "header-anim" }
       ]
     };

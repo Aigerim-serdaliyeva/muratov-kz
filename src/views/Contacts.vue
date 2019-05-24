@@ -37,7 +37,7 @@ mixin pseudo(className)
         span(v-for="item in 3")
 
 mixin dataList(data, className)    
-    .contacts__list.op-300(class=className)
+    .contacts__list.op-400(class=className)
         each item,index in data
             article        
                 +pseudo('pos-a-l')

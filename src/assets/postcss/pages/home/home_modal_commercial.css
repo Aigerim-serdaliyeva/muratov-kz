@@ -12,6 +12,7 @@ $seccol: #3CA6CD;
     }
     button {
         outline:none;
+        cursor: pointer;
         border: none;
         background: $seccol;
         color: #fff;
@@ -26,7 +27,7 @@ $seccol: #3CA6CD;
         background: transparent;
         border: none;
         border-bottom: 1px solid $seccol;
-        font-family: OpenSans-300;
+        font-family: OpenSans-400;
         &:focus {
             outline: none;
         }        

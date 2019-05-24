@@ -78,14 +78,19 @@
             background: rgba(1, 33, 63, 0.8);
             @include flex(center, flex-end);
             article {                
-                padding: w(313) w(38) 0 w(190);                
+                padding: w(313) w(38) 0 w(72);                
+                svg {
+                    @include size(w(155.56), w(189.24));
+                    display: block;
+                }
             }
             h1 {
-                font-size: w(115.887);
+                font-size: w(97.9769);
+                display: inline-flex
             }
             h2 {
                 text-align: center;
-                font-size: w(30.88);      
+                font-size: w(35.6159);      
                 padding: w(54) 0 0;          
             }
             button {

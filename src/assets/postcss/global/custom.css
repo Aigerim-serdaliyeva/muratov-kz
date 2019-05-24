@@ -45,8 +45,8 @@
     margin-top: 0 !important;
 }
 
-.op-300 {
-    font-family: OpenSans-300;
+.op-400 {
+    font-family: OpenSans-400;
 }
 
 .op-400 {
@@ -147,5 +147,21 @@
     visibility: hidden;
     pointer-events:none;
     z-index: -1;
+}
+
+.flex {
+    display: flex;
+}
+
+.aic {
+    align-items: center;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.jcsb {
+ justify-content: space-between;
 }
 

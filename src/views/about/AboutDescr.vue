@@ -35,11 +35,11 @@ mixin both
             each item,index in info.main.listDesk
                 article.lh-n.desk(class=item.class + ' wow' )
                     h3.op-700= item.title
-                    p.op-300= item.subtitle
+                    p.op-400= item.subtitle
             each item,index in info.main.listMob
                 article.lh-n.mob(class=item.class + ' wow' data-wow-delay=index*0.3 + 's')
                     h3.op-700= item.title
-                    p.op-300= item.subtitle                    
+                    p.op-400= item.subtitle                    
         .about-descr__image.libra-p-t-l
             base-libra(:isMobile="false" :type="'large'" class="libra-start")   
             .about-descr__parallax                                                           
