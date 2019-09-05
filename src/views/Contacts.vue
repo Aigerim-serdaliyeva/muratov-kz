@@ -6,13 +6,13 @@
         list: {
             desk: [
                 { text: 'info@muratov.kz'},                                        
-                { text: '+7 (727) 277-76-00' },
+                { text: '+7 (727) 277-76-06' },
                 { text: 'г.Алматы, ул. Шевченко, 153/1' },
                 { text: '@muratovpartners.kz' }
             ],
             mob: [
                 { text: 'info@muratov.kz'},                                        
-                { text: '<a href="tel:+77272777600">+7 (727) 277-76-00 </a>' },
+                { text: '<a href="tel:+77272777606">+7 (727) 277-76-06 </a>' },
                 { text: 'г.Алматы, ул. Шевченко, 153/1' },
                 { text: '@muratovpartners.kz' }
             ]
