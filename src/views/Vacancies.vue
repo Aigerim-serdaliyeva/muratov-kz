@@ -143,7 +143,7 @@ export default {
       return this.isContactsBlockSticked ? 'absolute' : 'sticky';
     },
     contactsBlockTop: function() {
-      return this.headerHeight + 80;
+      return this.headerHeight + 30;
     }
   },
   methods: {
