@@ -19,9 +19,9 @@
 			>
 				<div class="contacts-block__content">
 					<div class="contacts-block__title">Контакты</div>
-					<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
-					<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
-					<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/phone.png" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/telephone.png" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/message.png" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
 				</div>
 				<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
 			</div>
@@ -64,9 +64,9 @@
 					<div class="contacts-block">
 						<div class="contacts-block__content">
 							<div class="contacts-block__title">Контакты</div>
-							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
-							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
-							<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+						<div class="contacts-block__phone"><img src="../assets/images/vacancy/phone.png" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/telephone.png" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/message.png" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
 						</div>
 						<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
 					</div>
@@ -103,9 +103,9 @@
 					<div class="contacts-block">
 						<div class="contacts-block__content">
 							<div class="contacts-block__title">Контакты</div>
-							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
-							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
-							<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+						<div class="contacts-block__phone"><img src="../assets/images/vacancy/phone.png" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/telephone.png" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+					<div class="contacts-block__phone"><img src="../assets/images/vacancy/message.png" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
 						</div>
 						<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
 					</div>
@@ -143,8 +143,8 @@
 						<div class="contacts-block__content">
 							<div class="contacts-block__title">Контакты</div>
 							<div class="contacts-block__phone"><img src="../assets/images/vacancy/phone.png" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
-							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
-							<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+							<div class="contacts-block__phone"><img src="../assets/images/vacancy/telephone.png" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+							<div class="contacts-block__phone"><img src="../assets/images/vacancy/message.png" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
 						</div>
 						<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
 					</div>
@@ -169,7 +169,7 @@ export default {
 	},	
   computed: {
     position: function() {
-      return this.isContactsBlockSticked ? 'absolute' : 'fixed';
+      return this.isContactsBlockSticked ? 'fixed' : 'absolute';
     },
     contactsBlockTop: function() {
       return this.headerHeight + 30;
@@ -312,6 +312,12 @@ export default {
 		&__phone {
 			font-size: 14px;
 			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				margin-right: 6px;
+			}
 			a {				
 				color: #00305B;
 			}
