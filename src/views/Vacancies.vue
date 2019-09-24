@@ -15,7 +15,7 @@
 			<div
 				class="contacts-block"
 				ref="contactsBlock"
-				:style="{ position: position, left: `65%`, top: `${contactsBlockTop}px` }"
+				:style="{ position: position, left: `${contactsBlockLeft}px`, top: `${contactsBlockTop}px` }"
 			>
 				<div class="contacts-block__content">
 					<div class="contacts-block__title">Контакты</div>
@@ -169,7 +169,7 @@ export default {
 	},	
   computed: {
     position: function() {
-      return this.isContactsBlockSticked ? 'fixed' : 'absolute';
+      return this.isContactsBlockSticked ? 'fixed' : 'static';
     },
     contactsBlockTop: function() {
       return this.headerHeight + 30;
@@ -189,8 +189,8 @@ export default {
     window.addEventListener('scroll', this.handleScroll);
   },
   mounted() {
-    this.contactsBlockOffsetTop = this.$refs.contactsBlock.offsetTop;
-		this.contactsBlockLeft = this.$refs.contactsBlock.offsetLeft;
+    this.contactsBlockOffsetTop = $(this.$refs.contactsBlock).offset().top;
+		this.contactsBlockLeft = $(this.$refs.contactsBlock).offset().left;
 		
 		$('.vacancy__title').click( function() {
 			$(this).parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
