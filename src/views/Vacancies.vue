@@ -133,14 +133,14 @@ export default {
   data() {
     return {
       contactsBlockOffsetTop: 0,
-      contactsBlockLeft: 0,
+      contactsBlockLeft: 1300,
       headerHeight: 66,
       isContactsBlockSticked: false
     }
   },
   computed: {
     position: function() {
-      return this.isContactsBlockSticked ? 'fixed' : 'static';
+      return this.isContactsBlockSticked ? 'absolute' : 'sticky';
     },
     contactsBlockTop: function() {
       return this.headerHeight + 80;
@@ -204,7 +204,7 @@ export default {
 			background: #EAF4F6;
 			max-width: 1478px;
 			margin: 0 auto;
-			padding: 40px 40px 40px 315px;
+			padding: 40px 40px 40px 250px;
 			&:last-child {
 				margin-bottom: 30px;
 			}
@@ -231,12 +231,13 @@ export default {
 		text-align: center;
 		max-width: 316px;
 		width: 100%;
+		right: 160px;
 
 		&__content {
 			background: #fff;
 			box-shadow: 0px 0px 10px #CEE0E3;
 			border-radius: 5px;
-			padding: 30px 40px 25px;
+			padding: 30px 40px 10px;
 			margin-bottom: 5px;
 		}
     &.fixed {
@@ -271,14 +272,13 @@ export default {
 		}
 
 		&__link {
+			display: block;
 			color: #fff;
 			background: #3CA6CD;
 			border-radius: 5px;
 			font-weight: 600;
 			font-size: 18px;
 			padding: 13px;
-			max-width: 316px;
-			width: 100%;
 		}
   }
 </style>
