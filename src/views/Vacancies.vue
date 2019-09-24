@@ -15,7 +15,7 @@
 			<div
 				class="contacts-block"
 				ref="contactsBlock"
-				:style="{ position: position, left: `${contactsBlockLeft}px`, top: `${contactsBlockTop}px` }"
+				:style="{ position: position, left: `65%`, top: `${contactsBlockTop}px` }"
 			>
 				<div class="contacts-block__content">
 					<div class="contacts-block__title">Контакты</div>
@@ -161,7 +161,7 @@ export default {
   data() {
     return {
       contactsBlockOffsetTop: 0,
-      contactsBlockLeft: 55,
+      // contactsBlockLeft: 55,
       // contactsBlockLeft: 1300,
       headerHeight: 66,
       isContactsBlockSticked: false
@@ -169,7 +169,7 @@ export default {
 	},	
   computed: {
     position: function() {
-      return this.isContactsBlockSticked ? 'fixed' : 'static';
+      return this.isContactsBlockSticked ? 'fixed' : 'absolute';
     },
     contactsBlockTop: function() {
       return this.headerHeight + 30;
@@ -277,7 +277,7 @@ export default {
 		text-align: center;
 		max-width: 316px;
 		width: 100%;
-		right: 160px;
+		margin-top: 20px;
 
 		&__content {
 			background: #fff;
@@ -350,8 +350,13 @@ export default {
 			&__block {
 				padding: 30px;
 			}
-			&__text, ul li {
+			&__text {
 				font-size: 16px;
+			}
+			ul {
+				li {
+					font-size: 16px;
+				}
 			}
 		}
 	}
@@ -378,6 +383,7 @@ export default {
 				border: 1px solid rgba(#00305B, .3);
 				border-left: none;
 				border-right: none;
+				cursor: pointer;
 				padding: 20px;
 				margin: 0;
 			}
@@ -392,8 +398,13 @@ export default {
 					display: block;
 				}
 			}
-			&__text, ul li {
+			&__text {
 				font-size: 14px;
+			}
+			ul {
+				li {
+					font-size: 14px;
+				}
 			}
 		}
 	}
