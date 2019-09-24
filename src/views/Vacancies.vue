@@ -28,7 +28,7 @@
 
 			<div class="vacancy">
 				<h3 class="vacancy__title">Юрист</h3>
-				<div class="vacancy__block d-block">
+				<div class="vacancy__block open">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
 						<li>•	управление штатом проектных юристов (5-7 человек);</li>
@@ -192,9 +192,24 @@ export default {
     this.contactsBlockOffsetTop = $(this.$refs.contactsBlock).offset().top;
 		this.contactsBlockLeft = $(this.$refs.contactsBlock).offset().left;
 		
-		$('.vacancy__title').click( function() {
+		// $('.vacancy__title').click( function() {
+		// 	$(this).parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
+		// })
+
+		$('.vacancy__title').click(function(){
+
 			$(this).parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
-		})
+
+			// $(this).prev('.vacancy__title').parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
+
+			// if the current is not open then hide opened
+			// if( !($(this).closest('.vacancy').find('.vacancy__block').hasClass('open')) ) {
+			// 		$('.vacancy__title').closest('.vacancy').find('.vacancy__block').removeClass('open');
+			// 		$(this).closest('.vacancy').find('.vacancy__block').addClass('open');
+			// } else {
+			// 		// remove open if you want to close it
+			// }
+		});
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
@@ -405,6 +420,11 @@ export default {
 				display: none;
 				&:last-child {
 					margin-bottom: 0;
+				}
+
+				&.open {
+					display: block;
+					animation-delay: 2s;
 				}
 
 				.contacts-block {
