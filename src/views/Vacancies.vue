@@ -4,8 +4,8 @@
 
     <div>
       <div class="vacancies__title">
-        <p>В данном разделе размещены актуальные вакансии нашей компании. <br>
-          Отправляйте резюме на наш электронный адрес: <a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></p> 
+        В данном разделе размещены актуальные вакансии нашей компании. <br>
+          Отправляйте резюме на наш электронный адрес: <a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a>
       </div>
     </div>
 		
@@ -15,7 +15,7 @@
 			<div
 				class="contacts-block"
 				ref="contactsBlock"
-				:style="{ position: position, left: `65%`, top: `${contactsBlockTop}px` }"
+				:style="{ position: position, left: `60%`, top: `${contactsBlockTop}px` }"
 			>
 				<div class="contacts-block__content">
 					<div class="contacts-block__title">Контакты</div>
@@ -28,7 +28,7 @@
 
 			<div class="vacancy">
 				<h3 class="vacancy__title">Юрист</h3>
-				<div class="vacancy__block" style="display: block">
+				<div class="vacancy__block d-block">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
 						<li>•	управление штатом проектных юристов (5-7 человек);</li>
@@ -203,22 +203,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	.d-block {
+		display: block;
+	}
+
+	.d-none {
+		display: none;
+	}
+
   .vacancies {
 		position: relative;
-		max-width: 1478px;
 		margin: 0 auto;
+		font-family: serif;
     &__title {
+			font-family: OpenSans-400;
       color: #00305B;
       background: #EAF4F6;
       font-size: 18px;
       padding: 57px 15px;
+			text-align: center;
       a {
         font-weight: bold;
         color: #00305B;
-      }
-      p {
-        margin: 0 auto;
-        max-width: 660px;
       }
     }
   }
@@ -228,6 +234,7 @@ export default {
 
 		&__title {
 			font-weight: 600;
+			font-family: OpenSans-600;
 			font-size: 24px;
 			text-align: center;
 			margin: 30px 0;
@@ -238,7 +245,7 @@ export default {
 			background: #EAF4F6;
 			max-width: 1478px;
 			margin: 0 auto;
-			padding: 40px 40px 40px 20%;
+			padding: 40px 40px 40px 12%;
 			&:last-child {
 				margin-bottom: 30px;
 			}
@@ -258,6 +265,7 @@ export default {
 
 		&__text {
 			font-size: 18px;
+			font-family: OpenSans-600;
 			font-weight: 600;
 		}
 
@@ -268,6 +276,7 @@ export default {
 			}
 			li {
 				font-size: 18px;
+				font-family: OpenSans-400;
 			}
 		}
 	}
@@ -293,6 +302,7 @@ export default {
     }
 
 		&__title {
+			font-family: OpenSans-600;
 			font-weight: 600;
 			font-size: 24px;
 			position: relative;
@@ -310,6 +320,7 @@ export default {
 		}
 
 		&__phone {
+			font-family: OpenSans-400;
 			font-size: 14px;
 			margin-bottom: 20px;
 			display: flex;
@@ -324,6 +335,7 @@ export default {
 		}
 
 		&__link {
+			font-family: OpenSans-600;
 			display: block;
 			color: #fff;
 			background: #3CA6CD;
@@ -366,6 +378,7 @@ export default {
 		.vacancies {
 			padding-bottom: 20px;
 			background: #EAF4F6;
+			font-family: Open Sans;
 			&__title {
 				font-size: 14px;
 				text-align: center;
