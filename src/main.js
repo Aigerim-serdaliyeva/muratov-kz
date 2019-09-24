@@ -4,6 +4,7 @@ import store from "./store";
 import router from "./router";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
+import VueSlideUpDown from 'vue-slide-up-down'
 // Fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -21,6 +22,8 @@ Vue.use(KsVueScrollmagic);
 import WOW from 'wow.js'
 new WOW().init();
 // *** Mixins
+
+Vue.component('vue-slide-up-down', VueSlideUpDown)
 
 // Fontawesome
 library.add(faInstagram, faFacebookSquare, faVk);
