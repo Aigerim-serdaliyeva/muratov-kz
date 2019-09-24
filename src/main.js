@@ -14,6 +14,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+// global jquery
+import $ from 'jquery'
+window.$ = $;
+
 // *** Plugins
 import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);

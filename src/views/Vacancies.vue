@@ -27,8 +27,8 @@
 			</div>
 
 			<div class="vacancy">
-				<h3 class="vacancy__title" @click="toggleVacancy">Юрист</h3>
-				<div class="vacancy__block">
+				<h3 class="vacancy__title">Юрист</h3>
+				<div class="vacancy__block" style="display: block">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
 						<li>•	управление штатом проектных юристов (5-7 человек);</li>
@@ -60,6 +60,16 @@
 						<li>•	возможность карьерного роста, как горизонтального, так и вертикального;</li>
 						<li>•	достойная система мотивации при достижении KPI+расширенный соц. пакет.</li>
 					</ul>
+
+					<div class="contacts-block">
+						<div class="contacts-block__content">
+							<div class="contacts-block__title">Контакты</div>
+							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
+							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+							<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+						</div>
+						<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
+					</div>
 				</div>
 			</div>
 
@@ -90,6 +100,15 @@
 						<li>•	заработная плата+бонусы (KPI);</li>
 						<li>•	возможность карьерного роста.</li>
 					</ul>
+					<div class="contacts-block">
+						<div class="contacts-block__content">
+							<div class="contacts-block__title">Контакты</div>
+							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
+							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+							<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+						</div>
+						<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
+					</div>
 				</div>
 			</div>
 
@@ -120,15 +139,24 @@
 						<li>•	расширенная программа обучения и развития за счет работодателя;</li>
 						<li>•	условия оплаты оговаривается на собеседовании.</li>
 					</ul>
+					<div class="contacts-block">
+						<div class="contacts-block__content">
+							<div class="contacts-block__title">Контакты</div>
+							<div class="contacts-block__phone"><img src="../assets/images/vacancy/phone.png" alt=""> <a href="tel:+77010316711" class="text-phone" id="phone_number">+7 (701) 031 67 11</a> <span> (Дарья)</span></div>
+							<div class="contacts-block__phone"><img src="" alt=""> <a href="tel:+77272777600" class="text-phone" id="phone_number">+7 (727) 277 76 00</a> <span>, внутр. 603</span></div>
+							<div class="contacts-block__phone"><img src="" alt=""><a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a></div>
+						</div>
+						<a href="mailto:recrutment@muratov.kz" class="contacts-block__link">Отправить резюме</a>
+					</div>
 				</div>
 			</div>
-
 		</div>
 		
   </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -138,10 +166,10 @@ export default {
       headerHeight: 66,
       isContactsBlockSticked: false
     }
-  },
+	},	
   computed: {
     position: function() {
-      return this.isContactsBlockSticked ? 'absolute' : 'sticky';
+      return this.isContactsBlockSticked ? 'absolute' : 'fixed';
     },
     contactsBlockTop: function() {
       return this.headerHeight + 30;
@@ -155,10 +183,6 @@ export default {
       } else {
         this.isContactsBlockSticked = false;
       }
-		},
-		
-		toggleVacancy() {
-
 		}
   },
   created () {
@@ -166,7 +190,11 @@ export default {
   },
   mounted() {
     this.contactsBlockOffsetTop = this.$refs.contactsBlock.offsetTop;
-    this.contactsBlockLeft = this.$refs.contactsBlock.offsetLeft;
+		this.contactsBlockLeft = this.$refs.contactsBlock.offsetLeft;
+		
+		$('.vacancy__title').click( function() {
+			$(this).parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
+		})
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
@@ -203,6 +231,7 @@ export default {
 			font-size: 24px;
 			text-align: center;
 			margin: 30px 0;
+			background: #fff;
 		}
 
 		&__block {
@@ -212,6 +241,18 @@ export default {
 			padding: 40px 40px 40px 20%;
 			&:last-child {
 				margin-bottom: 30px;
+			}
+			.contacts-block {
+				display: none;
+				margin: 0 auto;
+				max-width: none;
+				&__content {
+					margin-bottom: 0;
+					border-radius: 0;
+				}
+				&__link {
+					border-radius: 0;
+				}
 			}
 		}
 
@@ -312,11 +353,17 @@ export default {
 	@media screen and (max-width: 767px) {
 
 		.vacancies {
+			padding-bottom: 20px;
+			background: #EAF4F6;
 			&__title {
 				font-size: 14px;
 				text-align: center;
 				padding: 40px 20px;
 			}
+		}
+
+		.contacts-block {
+			display: none;
 		}
 		
 		.vacancy {
@@ -330,8 +377,13 @@ export default {
 			}
 			&__block {
 				padding: 30px 20px;
+				display: none;
 				&:last-child {
 					margin-bottom: 0;
+				}
+
+				.contacts-block {
+					display: block;
 				}
 			}
 			&__text, ul li {
