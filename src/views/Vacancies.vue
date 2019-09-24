@@ -15,7 +15,7 @@
 			<div
 				class="contacts-block"
 				ref="contactsBlock"
-				:style="{ position: position, left: `${contactsBlockLeft}px`, top: `${contactsBlockTop}px` }"
+				:style="{ position: position, left: `65%`, top: `${contactsBlockTop}px` }"
 			>
 				<div class="contacts-block__content">
 					<div class="contacts-block__title">Контакты</div>
@@ -27,7 +27,7 @@
 			</div>
 
 			<div class="vacancy">
-				<h3 class="vacancy__title">Юрист</h3>
+				<h3 class="vacancy__title" @click="toggleVacancy">Юрист</h3>
 				<div class="vacancy__block">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
@@ -133,7 +133,8 @@ export default {
   data() {
     return {
       contactsBlockOffsetTop: 0,
-      contactsBlockLeft: 1300,
+      contactsBlockLeft: 55,
+      // contactsBlockLeft: 1300,
       headerHeight: 66,
       isContactsBlockSticked: false
     }
@@ -154,7 +155,11 @@ export default {
       } else {
         this.isContactsBlockSticked = false;
       }
-    }
+		},
+		
+		toggleVacancy() {
+
+		}
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
@@ -204,7 +209,7 @@ export default {
 			background: #EAF4F6;
 			max-width: 1478px;
 			margin: 0 auto;
-			padding: 40px 40px 40px 250px;
+			padding: 40px 40px 40px 20%;
 			&:last-child {
 				margin-bottom: 30px;
 			}
@@ -281,4 +286,49 @@ export default {
 			padding: 13px;
 		}
   }
+
+	@media screen and (max-width: 1200px) {
+		.vacancy {
+			&__block {
+				padding: 30px 50px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 991px) {
+		.vacancy {
+			&__title {
+				font-size: 20px;
+			}
+			&__block {
+				padding: 30px;
+			}
+			&__text, ul li {
+				font-size: 16px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		
+		.vacancy {
+			&__title {
+				font-size: 18px;
+				border: 1px solid rgba(#00305B, .3);
+				border-left: none;
+				border-right: none;
+				padding: 20px;
+				margin: 0;
+			}
+			&__block {
+				padding: 30px 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&__text, ul li {
+				font-size: 14px;
+			}
+		}
+	}
 </style>

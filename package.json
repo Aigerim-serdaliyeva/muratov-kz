@@ -34,6 +34,7 @@
     "vue-meta": "^1.5.8",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.13.0",
+    "vue-slide-up-down": "^2.0.0",
     "vuex": "^3.0.1",
     "wow.js": "^1.2.2"
   },
