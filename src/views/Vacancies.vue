@@ -310,6 +310,14 @@ export default {
 	}
 
 	@media screen and (max-width: 767px) {
+
+		.vacancies {
+			&__title {
+				font-size: 14px;
+				text-align: center;
+				padding: 40px 20px;
+			}
+		}
 		
 		.vacancy {
 			&__title {
