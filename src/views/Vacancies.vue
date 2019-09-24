@@ -27,8 +27,8 @@
 			</div>
 
 			<div class="vacancy">
-				<h3 class="vacancy__title">Юрист</h3>
-				<div class="vacancy__block open">
+				<h3 class="vacancy__title" @click="toggleVacancy(1)">Юрист</h3>
+				<div class="vacancy__block open" ref="vacancyBlock1">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
 						<li>•	управление штатом проектных юристов (5-7 человек);</li>
@@ -74,8 +74,8 @@
 			</div>
 
 			<div class="vacancy">
-				<h3 class="vacancy__title">Менеджер по продажам юридических услуг</h3>
-				<div class="vacancy__block">
+				<h3 class="vacancy__title" @click="toggleVacancy(2)">Менеджер по продажам юридических услуг</h3>
+				<div class="vacancy__block" ref="vacancyBlock2">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
 						<li>•	поиск и привлечение клиентов;</li>
@@ -113,8 +113,8 @@
 			</div>
 
 			<div class="vacancy">
-				<h3 class="vacancy__title">Проектный юрист</h3>
-				<div class="vacancy__block">
+				<h3 class="vacancy__title" @click="toggleVacancy(3)">Проектный юрист</h3>
+				<div class="vacancy__block" ref="vacancyBlock3">
 					<h3 class="vacancy__text">Обязанности:</h3>
 					<ul>
 						<li>Начался отбор начинающих юристов на стажировку.</li>
@@ -183,7 +183,18 @@ export default {
       } else {
         this.isContactsBlockSticked = false;
       }
-		}
+    },
+    toggleVacancy(index) {
+      if (window.outerWidth > 767) {
+        return;
+      }
+      $(this.$refs[`vacancyBlock${index}`]).slideToggle('slow');
+      for (let i = 1; i <= 3; i++) {
+        if (i !== index) {
+          $(this.$refs[`vacancyBlock${i}`]).slideUp('slow');
+        }
+      }
+    }
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
@@ -191,25 +202,6 @@ export default {
   mounted() {
     this.contactsBlockOffsetTop = $(this.$refs.contactsBlock).offset().top;
 		this.contactsBlockLeft = $(this.$refs.contactsBlock).offset().left;
-		
-		// $('.vacancy__title').click( function() {
-		// 	$(this).parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
-		// })
-
-		$('.vacancy__title').click(function(){
-
-			$(this).parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
-
-			// $(this).prev('.vacancy__title').parent('.vacancy').find('.vacancy__block').slideToggle( "slow" );
-
-			// if the current is not open then hide opened
-			// if( !($(this).closest('.vacancy').find('.vacancy__block').hasClass('open')) ) {
-			// 		$('.vacancy__title').closest('.vacancy').find('.vacancy__block').removeClass('open');
-			// 		$(this).closest('.vacancy').find('.vacancy__block').addClass('open');
-			// } else {
-			// 		// remove open if you want to close it
-			// }
-		});
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
