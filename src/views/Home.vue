@@ -24,6 +24,6 @@ export default {
     HomeCommercial,
     HomeModalCommercial
   },
-  mixins: [toggleHeaderHeight],  
+  mixins: [toggleHeaderHeight]
 };
 </script>

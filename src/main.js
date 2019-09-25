@@ -4,7 +4,6 @@ import store from "./store";
 import router from "./router";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
-import VueSlideUpDown from 'vue-slide-up-down'
 // Fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -15,7 +14,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 // global jquery
-import $ from 'jquery'
+import $ from "jquery";
 window.$ = $;
 
 // *** Plugins
@@ -23,11 +22,9 @@ import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
 import KsVueScrollmagic from "ks-vue-scrollmagic";
 Vue.use(KsVueScrollmagic);
-import WOW from 'wow.js'
+import WOW from "wow.js";
 new WOW().init();
 // *** Mixins
-
-Vue.component('vue-slide-up-down', VueSlideUpDown)
 
 // Fontawesome
 library.add(faInstagram, faFacebookSquare, faVk);

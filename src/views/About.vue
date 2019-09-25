@@ -18,6 +18,6 @@ export default {
     AboutPrinciples,
     AboutAdvantages
   },
-  mixins: [toggleHeaderHeight],  
+  mixins: [toggleHeaderHeight]
 };
 </script>
