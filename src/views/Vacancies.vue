@@ -161,8 +161,6 @@ export default {
   data() {
     return {
       contactsBlockOffsetTop: 0,
-      // contactsBlockLeft: 55,
-      // contactsBlockLeft: 1300,
       headerHeight: 66,
       isContactsBlockSticked: false
     }
