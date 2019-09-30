@@ -3,7 +3,6 @@
     <h2 class="h2-regular op-800">Статьи</h2>
 
     <div class="articles" >
-             
       <div class="tab__content" >
         <div class="article">
           <h2 class="article__title">{{ contentTitle }}</h2>
@@ -30,8 +29,7 @@
       <div v-for="(item, index) in tabs" :key="item.id">
         <div class="article__mobile__header"           
           @click="activetab=index"       
-          :class="[ activetab === index ? 'active': '' ]"    
-        >
+          :class="[ activetab === index ? 'active': '' ]" >
           <div>
             <h2 class="article__mobile__title">{{ item.title }}</h2>
             <div class="article__mobile__mintext">{{ item.text }}</div>
@@ -41,6 +39,7 @@
         <div v-show="activetab === index" class="article__mobile__text" v-for="text in contentText" :key="text.id">{{ text }}</div>
       </div>
     </div>
+
   </div>
 </template>
 
