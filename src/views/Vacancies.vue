@@ -3,11 +3,9 @@
     <h2 class="h2-regular op-800">Вакансии</h2>
 
     <div>
-      <div class="vacancies__title">
-        В данном разделе размещены актуальные вакансии нашей компании. <br />
-        Отправляйте резюме на наш электронный адрес:
-        <a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a>
-      </div>
+      <h2 class="vacancies__title">
+        Построй свою карьеру вместе с Muratov Partners!
+      </h2>
     </div>
 
     <div class="vacancies">
@@ -246,6 +244,12 @@
         </div>
       </div>
     </div>
+
+    <div class="vacancies__text">
+      В данном разделе размещены актуальные вакансии нашей компании. <br />
+      Отправляйте резюме на наш электронный адрес:
+      <a href="mailto:recrutment@muratov.kz">recrutment@muratov.kz</a>
+    </div>
   </div>
 </template>
 
@@ -315,9 +319,16 @@ export default {
   margin: 0 auto;
   font-family: serif;
   &__title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    color: #00305B;
+    padding: 50px 0;
+    background: #EAF4F6;
+  }
+  &__text {
     font-family: OpenSans-400;
     color: #00305b;
-    background: #eaf4f6;
     font-size: 18px;
     padding: 57px 15px;
     text-align: center;
@@ -333,11 +344,16 @@ export default {
 
   &__title {
     font-weight: 600;
+    max-width: 1478px;
+    margin: 0 auto;
     font-family: OpenSans-600;
     font-size: 24px;
     text-align: center;
-    margin: 30px 0;
+    padding: 30px 0;
     background: #fff;
+    border: 1px solid rgba(#00305b, 0.3);
+    border-left: none;
+    border-right: none;
   }
 
   &__block {
@@ -346,7 +362,7 @@ export default {
     margin: 0 auto;
     padding: 40px 40px 40px 12%;
     &:last-child {
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
     }
     .contacts-block {
       display: none;
@@ -491,9 +507,6 @@ export default {
   .vacancy {
     &__title {
       font-size: 18px;
-      border: 1px solid rgba(#00305b, 0.3);
-      border-left: none;
-      border-right: none;
       cursor: pointer;
       padding: 20px;
       margin: 0;
