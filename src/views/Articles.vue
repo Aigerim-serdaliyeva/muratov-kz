@@ -23,17 +23,23 @@
           <h3 class="tab__link__title"> {{item.title}} </h3>
           <div class="tab__link__text"> {{item.text}} </div>
         </div>
-
-    
       </div>
     </div>
 
     <div class="article__mobile">
-      <div class="article__mobile__header" v-for="(item, index) in tabs" :key="item.id" @click="toggleArticle(activetab === index)">
-        <h2 class="article__mobile__title">{{ item.title }}</h2>
-        <div class="article__mobile__mintext">{{ item.text }}</div>
+      <div v-for="(item, index) in tabs" :key="item.id">
+        <div class="article__mobile__header"           
+          @click="activetab=index"       
+          :class="[ activetab === index ? 'active': '' ]"    
+        >
+          <div>
+            <h2 class="article__mobile__title">{{ item.title }}</h2>
+            <div class="article__mobile__mintext">{{ item.text }}</div>
+          </div>  
+        </div>      
+
+        <div v-show="activetab === index" class="article__mobile__text" v-for="text in contentText" :key="text.id">{{ text }}</div>
       </div>
-      <div class="article__mobile__text" v-for="text in contentText" :key="text.id">{{ text }}</div>
     </div>
   </div>
 </template>
@@ -54,26 +60,7 @@ export default {
     contentText() {
       return this.article[this.activetab].text
     }
-  },
-  methods: {
-    
-    toggleArticle(index) {
-      // $('.article__mobile__header').click( function() {
-      //   this.closest('.article__mobile').find('.article__mobile__text').slideToggle("slow")
-      // })
-      // debugger
-      // if (window.outerWidth > 767) {
-      //   return;
-      // }
-      $(this.article[this.activetab].text).slideToggle("slow");
-      for (let i = 0; i <= 3; i++) {
-        if (i !== this.activetab) {
-          $(this.article[this.activetab].text).slideUp("slow");
-        }
-      }
-    }
-  }
- 
+  } 
 }
 </script>
 
@@ -163,6 +150,44 @@ export default {
     }
   }
 
+.d-none {
+  display: none;
+}
+  
+  .article__mobile {
+    display: none;
+    padding: 20px 0;
+    &__title {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    &__mintext {
+      text-align: center;
+    }
+    &__header {
+      cursor: pointer;
+      &.active {
+        background: #fff;
+        padding: 15px;
+        .article__mobile {
+          &__title {
+            font-size: 18px;
+            margin-bottom: 0;
+          }
+          &__mintext {
+            display: none;
+          }
+        }
+      }
+    }
+    &__text {
+      text-align: justify;
+      &:last-child {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
   @media screen and (max-width: 1600px) {
     .articles {
       margin: 0 60px;
@@ -183,6 +208,15 @@ export default {
           font-size: 16px;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .articles {
+      display: none;
+    }
+    .article__mobile {
+      display: block;
     }
   }
 </style>
