@@ -51,8 +51,14 @@ mixin both
         .contacts__main            
             +logo
             .contacts__line.desk
-            +dataList(info.list.desk, 'desk')
-            +dataList(info.list.mob, 'mob')
+            .contacts__block
+                .contacts__instagram
+                    <img src="@/assets/images/contact-instagram.svg" alt="">
+                +dataList(info.list.desk, 'desk')
+                +dataList(info.list.mob, 'mob')
+
+    .contacts__map
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8ce203b4c71048914da7fac2b6c2c90948a51cdf73fa688d595c48dff1721787&amp;source=constructor" width="100%" height="700" frameborder="0"></iframe>
 
 section.contacts#contacts
     +both
@@ -65,3 +71,44 @@ export default {
   mixins: [toggleHeaderHeight]
 };
 </script>
+
+
+<style lang="scss" scoped>
+    .contacts {
+        &__line {
+            margin: 0 28px;
+        }
+        &__block {
+            display: flex;
+            align-items: center;
+        }
+        &__instagram {
+            margin-right: 28px;
+        }
+     }
+
+     @media screen and (max-width: 767px) {
+         .contacts {
+             &__main {
+                 padding-bottom: 0;
+             }
+             &__block {
+                 flex-direction: column-reverse;
+             }
+             &__instagram {
+                 margin: 50px auto 0;
+                max-width: 375px;
+                width: 100%;
+                 img {
+                     width: 375px;
+                     margin-left: -8.266666666666667rem;
+                 }
+             }
+             &__map {
+                 iframe {                     
+                     height: 400px;
+                 }
+             }
+         }
+     }
+</style>

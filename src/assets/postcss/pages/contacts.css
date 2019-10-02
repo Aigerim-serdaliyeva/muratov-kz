@@ -63,7 +63,7 @@
             font-size: wm(18);            
         }    
         .pseudo-lines {                
-            top: wm(-100);                       
+            top: wm(-500);                       
         }            
         &__list {                        
             article {  

@@ -4,7 +4,7 @@
 
     <div>
       <h2 class="vacancies__title">
-        <span>Построй свою карьеру вместе</span> <span>с Muratov Partners!</span>
+        <span>Построй свою карьеру вместе</span>  <span>с Muratov Partners!</span>
       </h2>
     </div>
 
@@ -325,6 +325,11 @@ export default {
     color: #00305B;
     padding: 50px 0;
     background: #EAF4F6;
+    span {
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
   }
   &__text {
     font-family: OpenSans-300;
@@ -499,6 +504,7 @@ export default {
       padding: 30px 15px;
       span {
         display: block;
+        margin: 0;
       }
     }
   }

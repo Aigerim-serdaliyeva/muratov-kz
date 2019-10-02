@@ -18,12 +18,12 @@ mixin both
         base-libra(:isMobile="false" :type="'small'" :transparent="true" class="libra-col-blue")                
         base-libra(:isMobile="true" :type="'small'" :transparent="true" class="libra-col-blue")                
         .clients__testimonals            
-            h2.op-800= info.testimonals
-            hooper(:settings="settings2" ref="hooper2" :style="styleHooper")
-                slide(v-for="(item,index) in 23" :key="`hooperred-${index}`")
-                    .clients__slider-block
-                        img(:src="require(`@/assets/images/docs/doc-${index + 1}.png`)" @click="toggleGallery(index)")                        
-                hooper-navigation(slot='hooper-addons')                                        
+            //- h2.op-800= info.testimonals
+            //- hooper(:settings="settings2" ref="hooper2" :style="styleHooper")
+            //-     slide(v-for="(item,index) in 23" :key="`hooperred-${index}`")
+            //-         .clients__slider-block
+            //-             img(:src="require(`@/assets/images/docs/doc-${index + 1}.png`)" @click="toggleGallery(index)")                        
+            //-     hooper-navigation(slot='hooper-addons')                                        
             
             
 section.clients#clients
